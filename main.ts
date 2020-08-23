@@ -122,7 +122,6 @@ fred.draw();
 
 // class AnotherThingy {
 //     private x: number;
-//     y: number;
 
     //constructor(private x?: number, private y?: number){
 
@@ -137,4 +136,52 @@ fred.draw();
 
 // will sucesfully return value of x even thought it is private.
 
-//  
+//  you can also create methods to modify variables within a class that are private. like below:
+
+// class AnotherThingy2 {
+
+
+//     constructor(private x?: number, private y?: number){
+
+//     }
+
+//     getX(){
+//         return this.x;
+//     }
+
+//     setX(value){
+//         if (value < 0 ){
+//             throw new Error('value cant be less than 0')
+//         }
+//         this.x = value;
+//     }
+// }
+
+// let example3 = new AnotherThingy2(1,4);
+// example3.setX(50);
+
+// 'get' and 'set' are also keywords in TS. You can re-write getX() and setX() methods as below: (they are called 'getters and setters')
+
+// get X(){ 
+//     return this.x;
+// }
+
+//     set X(value){
+//         if (value < 0 ){
+//             throw new Error('value cant be less than 0')
+//         }
+//         this.x = value;
+//     }
+
+// then when you call them outside of the class defination 
+
+// let a = example3.X;
+
+// example.X = 300;
+
+// In TS, each file is a module. You typically declare a class in one file and export to use in another. see point.ts to see this in action. I'd import the class from point.ts below. 
+// it is the same as importing things in node. 
+
+// import {Point} from './point';
+
+// Now we can create an instance of Point and use it
