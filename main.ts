@@ -63,22 +63,45 @@
 // here is a class example in typescript. Everything about the point is within the point class (all variables and related functions). When a function is part of a class
 // we call it a method
 
-class aThing {
-    x: number;
-    y: number;
+// class aThing {
+//     x: number;
+//     y: number;
 
-    draw() { console.log( 'X: ' + this.x + " Y: " + this.y); 
-    }
+//     draw() { console.log( 'X: ' + this.x + " Y: " + this.y); 
+//     }
 
-    anotherFunction() { //...
-    }
-};
+//     anotherFunction() { //...
+//     }
+// };
 
 // using a class in action
 //AN OBJECT IS AN INSTANCE OF A CLASS
 
-let newThing = new aThing();
+// let newThing = new aThing();
 
-newThing.x = 1;
-newThing.y = 17;
-newThing.draw();
+// newThing.x = 1;
+// newThing.y = 17;
+// newThing.draw();
+
+// Below is how to use a Constructor in TypeScript. Constructors are methods that are called every time you create a new instance of a class 'constructor' is a reserved keyword in TS.
+
+class Something {
+    x: number;
+    y: number;
+
+    constructor(x: number, y: number){
+        this.x =x;
+        this.y = y;
+    }
+
+    draw(){
+        console.log('X: ' + this.x + ' Y: ' + this.y);
+    }
+}
+
+//below creating a new instance of the class using the constructor. we need to feed it some arguments  (in this case 1 and 2)
+
+let fred = new Something(1,2);
+
+fred.draw();
+
